@@ -1,24 +1,63 @@
 <html>
 <head>
+	<style>
+	.slider {
+	  position: relative;
+	  list-style: none;
+	  overflow: hidden;
+	  width: 100%;
+	  padding: 0;
+	  margin: 0;
+	  }
+
+	.slider li {
+	  -webkit-backface-visibility: hidden;
+	  position: absolute;
+	  display: none;
+	  width: 100%;
+	  left: 0;
+	  top: 0;
+	  }
+
+	.slider li:first-child {
+	  position: relative;
+	  display: block;
+	  float: left;
+	  }
+
+	.slider img {
+	  display: block;
+	  height: auto;
+	  float: left;
+	  width: 100%;
+	  border: 0;
+	  }
+	</style>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="jquery.slider.js"> </script>		
 	<script type="text/javascript"> 
 		$(document).ready(function() {
 			var options = {
-				color: 'red'
-			};
-		   $('.test').slider('hi');
+			animation: 'fadeout',
+			animationSpeed: 1000,
+			timeout: 5000,
+			text: '',
+			textPosition: 'bottom',
+			namespace: 'slider1'
+		};
+		   $(".slider").slider();
 		 });
 	</script>		
 	
 </head>
 <body>
-	<div id="example">
-		<div class='test'>test</div>
-		<div class='test'>test</div>
-		<div class='test'>test</div>
-		<div class='test'>test</div>
-	</div>
+	<ul class="slider" style="max-width: 800px;">
+	  <li><img src="1.jpg" alt="Alt image 1"></li>
+	  <li><img src="2.jpg" alt="Alt image 2"></li>
+	  <li><img src="3.jpg" alt="Alt image 3"></li>
+	</ul>
+	<div id="test">
+	<div>
 
 </body>
 </html>
