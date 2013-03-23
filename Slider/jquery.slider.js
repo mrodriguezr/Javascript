@@ -1,12 +1,8 @@
 
 (function($){
 	var settings = {
-		animation: 'fadeout',
 		animationSpeed: 2000,
 		timeout: 4000,
-		text: '',
-		textPosition: 'bottom',
-		cssClass: 'rslides'
 	};
 	var rotate,
 		index = 0,
@@ -23,14 +19,14 @@
 			});
 		},
 		_startSlide: function(context, elem){
-			var $slide = context.children(),
-				length = $slide.size();
+			var $slides = context.children(),
+				length = $slides.size();
 			
 			rotate = setInterval(function () {
-            $slide.stop(true, true);
+	            $slides.stop(true, true);
 
-            var idx = index + 1 < length ? index + 1 : 0;
-            methods._slideItem(context, idx);
+	            var idx = index + 1 < length ? index + 1 : 0;
+	            methods._slideItem(context, idx);
             }, settings.timeout);
           },
         _slideItem: function (elem, idx) {
@@ -44,9 +40,11 @@
 			  .fadeIn(settings.animationSpeed, function () {
 				$(this).css(visible);
 				index = idx;
-				$("#test").text($slide.eq(idx).find('img').attr('alt'));
 			  });
-		}
+		},
+		_callback: function() {
+	        $( "#effect:visible" ).removeAttr( "style" ).fadeOut();
+	  }
 	};
 	
 	$.fn.slider = function(options){

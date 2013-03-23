@@ -1,50 +1,10 @@
 <html>
 <head>
-	<style>
-	.slider {
-	  position: relative;
-	  list-style: none;
-	  overflow: hidden;
-	  width: 100%;
-	  padding: 0;
-	  margin: 0;
-	  }
-
-	.slider li {
-	  -webkit-backface-visibility: hidden;
-	  position: absolute;
-	  display: none;
-	  width: 100%;
-	  left: 0;
-	  top: 0;
-	  }
-
-	.slider li:first-child {
-	  position: relative;
-	  display: block;
-	  float: left;
-	  }
-
-	.slider img {
-	  display: block;
-	  height: auto;
-	  float: left;
-	  width: 100%;
-	  border: 0;
-	  }
-	</style>
+	<link rel="stylesheet" type="text/css" href="ui-slider-styles.css">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="jquery.slider.js"> </script>		
 	<script type="text/javascript"> 
-		$(document).ready(function() {
-			var options = {
-			animation: 'fadeout',
-			animationSpeed: 1000,
-			timeout: 5000,
-			text: '',
-			textPosition: 'bottom',
-			namespace: 'slider1'
-		};
+		$(document).ready(function() {		
 		   $(".slider").slider();
 		 });
 	</script>		
@@ -52,13 +12,10 @@
 </head>
 <body>
 	<ul class="slider" style="max-width: 800px;">
-	  <li><img src="1.jpg" alt="Alt image 1"></li>
-	  <li><img src="2.jpg" alt="Alt image 2"></li>
-	  <li><img src="3.jpg" alt="Alt image 3"></li>
+	  <li><img src="1.jpg" alt="Image 1"></li>
+	  <li><img src="2.jpg" alt="Image 2"></li>
+	  <li><img src="3.jpg" alt="Image 3"></li>
 	</ul>
-	<div id="test">
-	<div>
-
 </body>
 </html>
 
